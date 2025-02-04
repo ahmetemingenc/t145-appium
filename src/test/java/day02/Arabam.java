@@ -89,7 +89,7 @@ public class Arabam {
 
         // Gelen en ucuz aracin 500.000 tl den buyuk oldugu dogrulanir
         int expectedMinPrice = 500001;
-        String actualPriceString = driver.findElementByXPath("//*[@text='615.000 TL']").getText();
+        String actualPriceString = driver.findElementByXPath("(//*[@resource-id='com.dogan.arabam:id/tvPrice'])[1]").getText();
         int actualPrice = Integer.parseInt(actualPriceString.replaceAll("\\D", ""));
 
         Assert.assertTrue(actualPrice >= expectedMinPrice);
